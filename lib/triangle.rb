@@ -1,6 +1,6 @@
 require 'pry'
 class Triangle
-  attr_accessor :side_1, :side_2, :side_3
+  attr_accessor :side_1, :side_2, :side_3, :all_sides
 
   def initialize(side_1, side_2, side_3)
     @side_1 = side_1
@@ -30,8 +30,7 @@ class Triangle
 
 
   def real_triangle
-    self.all_sides.any? do | side | 
-      binding.pry
+    all_sides.any? do | side | 
       side < 0 || all_sides[0] + all_sides[1] <= all_sides[2] 
     end
   end
